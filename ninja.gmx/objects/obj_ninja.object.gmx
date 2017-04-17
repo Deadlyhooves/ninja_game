@@ -28,6 +28,7 @@
             <string>self.x = room_width/2;
 self.y = room_height/2;
 spritespeed = 0;
+starfired = false;
 
 self.image_speed = spritespeed;
 </string>
@@ -164,6 +165,31 @@ move_wrap(true, false, sprite_width);
             <kind>1</kind>
             <string>spritespeed = 0;
 self.image_index = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="56">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>starfired = true;
+instance_create(self.x,self.y,obj_star);
+show_debug_message("Making a star!");
 </string>
           </argument>
         </arguments>
