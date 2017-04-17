@@ -9,8 +9,11 @@
     <sprite>sprites\spr_ninja</sprite>
     <sprite>sprites\spr_star</sprite>
     <sprite>sprites\spr_evnin</sprite>
+    <sprite>sprites\spr_dead</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bk_dojo</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts"/>
   <objects name="objects">

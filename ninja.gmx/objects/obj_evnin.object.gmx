@@ -56,28 +56,37 @@ self.image_speed = spritespeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>self.image_speed = 15/60
-
-if(obj_ninja.x &gt; self.x)
+            <string>if(obj_enemy_spawn.game_over == false)
 {
-    self.image_xscale = -1;
-    self.x++;
+    self.image_speed = 15/60
+    
+    if(obj_ninja.x &gt; self.x)
+    {
+        self.image_xscale = -1;
+        self.x++;
+    }
+    
+    if(obj_ninja.x &lt; self.x)
+    {
+        self.image_xscale = 1;
+        self.x--;
+    }
+    
+    if(obj_ninja.y &gt; self.y)
+    {
+        self.y++;
+    }
+    
+    if(obj_ninja.y &lt; self.y)
+    {
+        self.y--;
+    }
 }
 
-if(obj_ninja.x &lt; self.x)
+if(obj_enemy_spawn.game_over == true)
 {
-    self.image_xscale = 1;
-    self.x--;
-}
-
-if(obj_ninja.y &gt; self.y)
-{
-    self.y++;
-}
-
-if(obj_ninja.y &lt; self.y)
-{
-    self.y--;
+    self.image_speed = 0;
+    self.image_index = 0;
 }
 </string>
           </argument>

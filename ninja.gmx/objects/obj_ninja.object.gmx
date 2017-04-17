@@ -76,7 +76,8 @@ self.image_speed = spritespeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>game_over = true;
+            <string>obj_enemy_spawn.game_over = true;
+self.sprite_index = spr_dead;
 </string>
           </argument>
         </arguments>
@@ -99,9 +100,12 @@ self.image_speed = spritespeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spritespeed = 15/60;
-self.image_xscale = 1;
-self.y = self.y -3;
+            <string>if(obj_enemy_spawn.game_over == false)
+{
+    spritespeed = 15/60;
+    self.image_xscale = 1;
+    self.y = self.y -3;
+}
 </string>
           </argument>
         </arguments>
@@ -124,9 +128,12 @@ self.y = self.y -3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spritespeed = 15/60;
-self.image_xscale = 1;
-self.y = self.y+3;
+            <string>if(obj_enemy_spawn.game_over == false)
+{
+    spritespeed = 15/60;
+    self.image_xscale = 1;
+    self.y = self.y+3;
+}
 </string>
           </argument>
         </arguments>
@@ -149,16 +156,19 @@ self.y = self.y+3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spritespeed = 15/60;
-self.image_xscale = -1;
-if(self.image_index == 0)
-    {
-        self.image_index = 1;
-    }
+            <string>if(obj_enemy_spawn.game_over == false)
+{
+    spritespeed = 15/60;
+    self.image_xscale = -1;
+    if(self.image_index == 0)
+        {
+            self.image_index = 1;
+        }
+        
+    self.x = self.x +3;
     
-self.x = self.x +3;
-
-move_wrap(true, false, sprite_width);
+    move_wrap(true, false, sprite_width);
+}
 </string>
           </argument>
         </arguments>
@@ -181,16 +191,19 @@ move_wrap(true, false, sprite_width);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spritespeed = 15/60;
-self.image_xscale = 1;
-if(self.image_index == 0)
-    {
-        self.image_index = 1;
-    }
+            <string>if(obj_enemy_spawn.game_over == false)
+{
+    spritespeed = 15/60;
+    self.image_xscale = 1;
+    if(self.image_index == 0)
+        {
+            self.image_index = 1;
+        }
+        
+    self.x = self.x -3;
     
-self.x = self.x -3;
-
-move_wrap(true, false, sprite_width);
+    move_wrap(true, false, sprite_width);
+}
 </string>
           </argument>
         </arguments>
@@ -260,7 +273,7 @@ self.image_index = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(starfired == false)
+            <string>if(obj_enemy_spawn.game_over == false)
 {
     starfired = true;
     instance_create(self.x,self.y,obj_star);
